@@ -1,0 +1,66 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0093E9 0%, #80D0C7 100%);
+    font-family: "Poppins", sans-serif;
+}
+
+.main-content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+.login-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-card img {
+    width: 135px;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border-radius: 10px;
+    padding-left: 40px;
+}
+
+.form-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+
+.btn-login {
+    background: linear-gradient(90deg, #0093E9, #007BFF);
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    opacity: 0.9;
+}
+
+.text-link a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.text-link a:hover {
+    text-decoration: underline;
+}
