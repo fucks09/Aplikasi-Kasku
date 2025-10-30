@@ -16,7 +16,12 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <a href="dashboard_warga.php" class="<?= $current_page == 'dashboard_warga.php' ? 'active' : '' ?>"><i
             class="bi bi-house"></i> Dashboard</a>
 
-    <a href="tagihan.php" class="<?= $current_page == 'tagihan.php' ? 'active' : '' ?>">
+    <a href="tagihan_warga.php" class="<?= $current_page == 'tagihan.php' ? 'active' : '' ?>">
         <i class="bi bi-journal-text"></i> Tagihan
+    </a>
+
+    <!-- Tombol Logout -->
+    <a href="../index.php" class="logout-btn">
+        <i class="bi bi-box-arrow-right"></i> Logout
     </a>
 </div>

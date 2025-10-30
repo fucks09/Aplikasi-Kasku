@@ -52,6 +52,7 @@
                 setTimeout(() => {
                     window.location.replace("ketua/dashboard_ketua.php");
                 }, 1000);
+
             } else if (username === 'warga' && password === '12345') {
                 const successAlert = `
       <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -62,6 +63,18 @@
 
                 setTimeout(() => {
                     window.location.replace("warga/dashboard_warga.php");
+                }, 1000);
+
+            } else if (username === 'bendahara' && password === '123456') {
+                const successAlert = `
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Berhasil!</strong> Anda berhasil login sebagai User.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>`;
+                alertContainer.innerHTML = successAlert;
+
+                setTimeout(() => {
+                    window.location.replace("bendahara/dashboard_bendahara.php");
                 }, 1000);
 
             } else {

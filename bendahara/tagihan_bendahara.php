@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <?php include 'sidebar_warga.php'; ?>
+    <?php include 'sidebar_bendahara.php'; ?>
 
     <div class="container mt-5">
         <div class="table-container">

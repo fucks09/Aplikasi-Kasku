@@ -7,28 +7,14 @@
     <title>KASKU Dashboard</title>
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <img src="../img/kas.jpg" alt="Logo KASKU">
-        <h4>KASKU</h4>
-        <a href="#" class="active"><i class="bi bi-house"></i> Dashboard</a>
-        <a href="#"><i class="bi bi-journal-text"></i> Tagihan</a>
-    </div>
-
     <!-- Main Content -->
-    <div class="main-content">
-        <div class="header">
-            <img src="../img/kasku.jpg" alt="Kasku Text" height="40">
-            <div class="d-flex align-items-center">
-                <span class="me-2">Welcome, Bendahara</span>
-                <i class="bi bi-person-circle fs-4"></i>
-            </div>
-        </div>
-
+     <?php include 'sidebar_bendahara.php'?>
+     <div class="main-content">
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="card-info">

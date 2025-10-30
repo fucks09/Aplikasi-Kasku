@@ -24,5 +24,10 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
     <a href="data_warga.php" class="<?= $current_page == 'data_warga.php' ? 'active' : '' ?>">
         <i class="bi bi-journal-text"></i> Data Warga</a>
+
+    <!-- Tombol Logout -->
+    <a href="../index.php" class="logout-btn">
+        <i class="bi bi-box-arrow-right"></i> Logout
+    </a>
     </a>
 </div>

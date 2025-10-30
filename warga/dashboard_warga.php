@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <?php include 'sidebar.php'; ?>
+    <?php include 'sidebar_warga.php'; ?>
     <!-- Main Content -->
     <div class="main-content">
         <div class="row g-3">
