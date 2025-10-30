@@ -1,8 +1,3 @@
-<?php
-// Jika perlu session, aktifkan di sini
-// session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="id">
 
@@ -13,190 +8,13 @@
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/pembayaran.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css  " rel="stylesheet">
-    <style>
-        /* Reset dasar */
-        html, body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            overflow-x: hidden;
-        }
-
-        .main-content {
-            margin-left: 250px;
-            padding: 20px;
-            background-color: #f8f9fa;
-            min-height: 100vh;
-            position: relative;
-            z-index: 999;
-        }
-
-        .top-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            background: white !important;
-            border-bottom: 1px solid #dee2e6;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: fixed;
-            top: 0;
-            left: 250px;
-            right: 0;
-            z-index: 1000;
-            width: calc(100vw - 250px);
-            margin: 0;
-            padding-left: 30px !important;
-        }
-
-        .page-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #333;
-            margin: 0;
-        }
-
-        .user-greeting {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.9rem;
-        }
-
-        /* === MODIFIKASI UNTUK MENYAMAKAN UKURAN "WELCOME, BENDAHARA" DENGAN GAMBAR KANAN === */
-        .user-greeting span {
-            font-size: 0.875rem !important; /* Lebih kecil dari 0.9rem */
-            font-weight: 400 !important;   /* Normal, bukan bold */
-            color: #6c757d !important;     /* Warna abu-abu lebih lembut, opsional */
-        }
-
-        .content-wrapper {
-            margin-top: 70px;
-            padding: 20px;
-            padding-left: 0 !important;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .btn-action {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-        }
-
-        .btn-add {
-            background: #00c6ff;
-            color: white;
-            border: none;
-        }
-
-        .btn-add:hover {
-            background: #00aaff;
-        }
-
-        .btn-search {
-            background: #e9ecef;
-            color: #495057;
-            border: 1px solid #dee2e6;
-        }
-
-        .btn-import {
-            background: #f8f9fa;
-            color: #495057;
-            border: 1px solid #dee2e6;
-        }
-
-        .table-container {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #dee2e6;
-        }
-
-        th {
-            background: #f8f9fa;
-            font-weight: bold;
-        }
-
-        .status-badge {
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
-        }
-
-        .status-sudah-bayar {
-            background: #d1e7dd;
-            color: #0f5132;
-        }
-
-        .status-verifikasi {
-            background: #cce5ff;
-            color: #0d6efd;
-        }
-
-        .btn-verifikasi {
-            background: #0d6efd;
-            color: white;
-            border: none;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            cursor: pointer;
-        }
-
-        .btn-verifikasi:hover {
-            background: #0b5ed7;
-        }
-
-        .btn-sudah-bayar {
-            background: #198754;
-            color: white;
-            border: none;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            cursor: pointer;
-        }
-
-        .btn-sudah-bayar:hover {
-            background: #157347;
-        }
-    </style>
 </head>
 
 <body>
-    <!-- Include Sidebar -->
+    <!-- Sidebar -->
     <?php include 'sidebar_bendahara.php'; ?>
-
-    <!-- Top Header Bar -->
-    <div class="top-header">
-        <h2 class="page-title">Pembayaran Warga</h2>
-        <div class="user-greeting">
-            <span>Welcome, Bendahara</span>
-            <i class="bi bi-person-circle fs-4"></i>
-        </div>
-    </div>
 
     <!-- Main Content -->
     <div class="main-content">
@@ -262,7 +80,8 @@
     </div>
 
     <!-- Modal Tambah Tagihan Baru -->
-    <div class="modal fade" id="tambahTagihanModal" tabindex="-1" aria-labelledby="tambahTagihanModalLabel" aria-hidden="true">
+    <div class="modal fade" id="tambahTagihanModal" tabindex="-1" aria-labelledby="tambahTagihanModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -298,7 +117,8 @@
     </div>
 
     <!-- Modal Import Data Pembayaran -->
-    <div class="modal fade" id="importDataModal" tabindex="-1" aria-labelledby="importDataModalLabel" aria-hidden="true">
+    <div class="modal fade" id="importDataModal" tabindex="-1" aria-labelledby="importDataModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -321,7 +141,8 @@
     </div>
 
     <!-- Modal Verifikasi -->
-    <div class="modal fade" id="verifikasiModal" tabindex="-1" aria-labelledby="verifikasiModalLabel" aria-hidden="true">
+    <div class="modal fade" id="verifikasiModal" tabindex="-1" aria-labelledby="verifikasiModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -339,8 +160,10 @@
                     </div>
                     <div class="mb-3">
                         <label for="modalFoto" class="form-label">Foto Pembayaran</label>
-                        <div class="border rounded p-2 text-center" style="height: 150px; display: flex; align-items: center; justify-content: center;">
-                            <img src="https://via.placeholder.com/100?text=No+Image" alt="Foto Pembayaran" id="modalFoto" class="img-fluid" style="max-height: 120px;">
+                        <div class="border rounded p-2 text-center"
+                            style="height: 150px; display: flex; align-items: center; justify-content: center;">
+                            <img src="https://via.placeholder.com/100?text=No+Image" alt="Foto Pembayaran"
+                                id="modalFoto" class="img-fluid" style="max-height: 120px;">
                         </div>
                     </div>
                 </div>
@@ -379,8 +202,10 @@
                     </div>
                     <div class="mb-3">
                         <label for="detailFoto" class="form-label">Foto Pembayaran</label>
-                        <div class="border rounded p-2 text-center" style="height: 150px; display: flex; align-items: center; justify-content: center;">
-                            <img src="  https://via.placeholder.com/100?text=No+Image" alt="Foto Pembayaran" id="detailFoto" class="img-fluid" style="max-height: 120px;">
+                        <div class="border rounded p-2 text-center"
+                            style="height: 150px; display: flex; align-items: center; justify-content: center;">
+                            <img src="  https://via.placeholder.com/100?text=No+Image" alt="Foto Pembayaran"
+                                id="detailFoto" class="img-fluid" style="max-height: 120px;">
                         </div>
                     </div>
                 </div>
@@ -396,13 +221,13 @@
 
     <script>
         // === TOMBOL "TAMBAH TAGIHAN BARU" ===
-        document.getElementById('btnTambahTagihan').addEventListener('click', function() {
+        document.getElementById('btnTambahTagihan').addEventListener('click', function () {
             const modal = new bootstrap.Modal(document.getElementById('tambahTagihanModal'));
             modal.show();
         });
 
         // === SIMPAN TAGIHAN ===
-        document.getElementById('btnSimpanTagihan').addEventListener('click', function() {
+        document.getElementById('btnSimpanTagihan').addEventListener('click', function () {
             const nama = document.getElementById('namaTagihan').value.trim();
             const tanggal = document.getElementById('tanggalTagihan').value;
             const keterangan = document.getElementById('keteranganTagihan').value.trim();
@@ -431,7 +256,7 @@
         });
 
         // === TOMBOL "CARI WARGA" ===
-        document.getElementById('btnCariWarga').addEventListener('click', function() {
+        document.getElementById('btnCariWarga').addEventListener('click', function () {
             const container = document.getElementById('searchInputContainer');
             container.style.display = container.style.display === 'none' ? 'block' : 'none';
             if (container.style.display === 'block') {
@@ -440,7 +265,7 @@
         });
 
         // === FUNGSI SEARCH BERDASARKAN NAMA ===
-        document.getElementById('searchInput').addEventListener('input', function() {
+        document.getElementById('searchInput').addEventListener('input', function () {
             const keyword = this.value.toLowerCase().trim();
             const rows = document.querySelectorAll('#payment-table-body tr');
 
@@ -457,13 +282,13 @@
         });
 
         // === TOMBOL "IMPORT DATA PEMBAYARAN" ===
-        document.getElementById('btnImportData').addEventListener('click', function() {
+        document.getElementById('btnImportData').addEventListener('click', function () {
             const modal = new bootstrap.Modal(document.getElementById('importDataModal'));
             modal.show();
         });
 
         // === SIMULASI IMPORT ===
-        document.getElementById('btnImportFile').addEventListener('click', function() {
+        document.getElementById('btnImportFile').addEventListener('click', function () {
             const fileInput = document.getElementById('fileImport');
             if (!fileInput.files.length) {
                 alert("Silakan pilih file terlebih dahulu!");
@@ -476,7 +301,7 @@
         });
 
         // === EVENT DELEGATION: TOMBOL "VERIFIKASI" DINAMIS ===
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             if (e.target.classList.contains('btn-verifikasi')) {
                 const button = e.target;
                 const row = button.closest('tr');
@@ -497,7 +322,7 @@
         });
 
         // === TOMBOL "SETUJU" ===
-        document.getElementById('btnSetuju').addEventListener('click', function() {
+        document.getElementById('btnSetuju').addEventListener('click', function () {
             const modal = document.getElementById('verifikasiModal');
             const paymentId = modal.dataset.paymentId;
 
@@ -517,12 +342,12 @@
         });
 
         // === TOMBOL "TOLAK" ===
-        document.querySelector('.modal-footer .btn-danger').addEventListener('click', function() {
+        document.querySelector('.modal-footer .btn-danger').addEventListener('click', function () {
             console.log('Pembayaran ditolak.');
         });
 
         // === EVENT DELEGATION: TOMBOL "SUDAH BAYAR" DINAMIS ===
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             if (e.target.classList.contains('btn-sudah-bayar')) {
                 const button = e.target;
                 const paymentId = button.getAttribute('data-id');

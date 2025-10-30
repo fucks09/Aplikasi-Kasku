@@ -12,9 +12,11 @@
 </head>
 
 <body>
+    <!-- Sidebar -->
+    <?php include 'sidebar_bendahara.php'; ?>
+
     <!-- Main Content -->
-     <?php include 'sidebar_bendahara.php'?>
-     <div class="main-content">
+    <div class="main-content">
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="card-info">

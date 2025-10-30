@@ -12,8 +12,10 @@
 </head>
 
 <body>
+    <!-- Sidebar -->
     <?php include 'sidebar_bendahara.php'; ?>
 
+    <!-- Main -->
     <div class="container mt-5">
         <div class="table-container">
             <h4 class="mb-3">Tagihan</h4>
@@ -75,8 +77,7 @@
                                 <small>Insert Picture</small>
                             </div>
                         </div>
-                        <img src="../img/qr.png"
-                            width="200" alt="QR Code">
+                        <img src="../img/qr.png" width="200" alt="QR Code">
                     </div>
                 </div>
                 <div class="modal-footer border-0 justify-content-center">

@@ -1,8 +1,3 @@
-<?php
-// Jika perlu session, aktifkan di sini
-// session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="id">
 
@@ -13,183 +8,13 @@
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/pengajuan_bendahara.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css  " rel="stylesheet">
-    <style>
-        /* Reset dasar */
-        html, body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            overflow-x: hidden;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .main-content {
-            margin-left: 250px;
-            padding: 20px;
-            background-color: #f8f9fa;
-            min-height: 100vh;
-            position: relative;
-            z-index: 999;
-        }
-
-        .top-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            background: white !important;
-            border-bottom: 1px solid #dee2e6;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: fixed;
-            top: 0;
-            left: 250px;
-            right: 0;
-            z-index: 1000;
-            width: calc(100vw - 250px);
-            margin: 0;
-            padding-left: 30px !important;
-        }
-
-        .page-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #333;
-            margin: 0;
-        }
-
-        .user-greeting {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.9rem;
-        }
-
-        /* === MODIFIKASI: Menyamakan ukuran "Welcome, Bendahara" dengan gambar kanan === */
-        .user-greeting span {
-            font-size: 0.875rem !important;
-            font-weight: 400 !important;
-            color: #6c757d !important;
-        }
-
-        .content-wrapper {
-            margin-top: 70px;
-            padding: 20px;
-            padding-left: 0 !important;
-        }
-
-        /* Form Pengajuan Container */
-        .form-pengajuan-container {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            padding: 20px;
-            border: 2px solid #6c5ce7;
-        }
-
-        .form-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 15px;
-            background: linear-gradient(90deg, #6c5ce7, #00c6ff);
-            color: white;
-            border-radius: 8px 8px 0 0;
-            margin-bottom: 15px;
-        }
-
-        .btn-tambah-pengajuan {
-            background: white;
-            color: #6c5ce7;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            cursor: pointer;
-        }
-
-        .btn-tambah-pengajuan:hover {
-            background: #f8f9fa;
-        }
-
-        .search-icon {
-            font-size: 1.2rem;
-            cursor: pointer;
-            color: white;
-        }
-
-        .table-container {
-            background: #f8f9fa;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-top: 15px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #dee2e6;
-        }
-
-        th {
-            background: #e9ecef;
-            font-weight: bold;
-        }
-
-        .status-badge {
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
-        }
-
-        .status-proses {
-            background: #cce5ff;
-            color: #0d6efd;
-        }
-
-        .btn-status {
-            background: #0d6efd;
-            color: white;
-            border: none;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            cursor: pointer;
-        }
-
-        .btn-status:hover {
-            background: #0b5ed7;
-        }
-
-        /* === MODIFIKASI: Gaya untuk elemen "Pengajuan" di sidebar agar seragam === */
-        /* Ini adalah gaya tambahan untuk memastikan teks "Pengajuan" memiliki ukuran dan gaya yang sama seperti "Pembayaran Warga" */
-        .sidebar ul li a span {
-            font-size: 0.95rem; /* Atur ukuran font agar konsisten */
-        }
-    </style>
 </head>
 
 <body>
-    <!-- Include Sidebar -->
+    <!-- Sidebar -->
     <?php include 'sidebar_bendahara.php'; ?>
-
-    <!-- Top Header Bar -->
-    <div class="top-header">
-        <h2 class="page-title">Pengajuan</h2>
-        <div class="user-greeting">
-            <span>Welcome, Bendahara</span>
-            <i class="bi bi-person-circle fs-4"></i>
-        </div>
-    </div>
 
     <!-- Main Content -->
     <div class="main-content">
@@ -256,7 +81,8 @@
     </div>
 
     <!-- Modal Tambah Pengajuan Baru -->
-    <div class="modal fade" id="tambahPengajuanModal" tabindex="-1" aria-labelledby="tambahPengajuanModalLabel" aria-hidden="true">
+    <div class="modal fade" id="tambahPengajuanModal" tabindex="-1" aria-labelledby="tambahPengajuanModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -292,7 +118,8 @@
     </div>
 
     <!-- Modal Detail Pengajuan -->
-    <div class="modal fade" id="detailPengajuanModal" tabindex="-1" aria-labelledby="detailPengajuanModalLabel" aria-hidden="true">
+    <div class="modal fade" id="detailPengajuanModal" tabindex="-1" aria-labelledby="detailPengajuanModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -333,13 +160,13 @@
 
     <script>
         // === TOMBOL "TAMBAH PENGAJUAN BARU" ===
-        document.getElementById('btnTambahPengajuan').addEventListener('click', function() {
+        document.getElementById('btnTambahPengajuan').addEventListener('click', function () {
             const modal = new bootstrap.Modal(document.getElementById('tambahPengajuanModal'));
             modal.show();
         });
 
         // === SIMPAN PENGAJUAN ===
-        document.getElementById('btnSimpanPengajuan').addEventListener('click', function() {
+        document.getElementById('btnSimpanPengajuan').addEventListener('click', function () {
             const nama = document.getElementById('namaPengaju').value.trim();
             const tanggal = document.getElementById('tanggalPengajuan').value;
             const keterangan = document.getElementById('keteranganPengajuan').value.trim();
@@ -373,7 +200,7 @@
         });
 
         // === TOMBOL SEARCH ICON ===
-        document.getElementById('searchIcon').addEventListener('click', function() {
+        document.getElementById('searchIcon').addEventListener('click', function () {
             const container = document.getElementById('searchInputContainer');
             container.style.display = container.style.display === 'none' ? 'block' : 'none';
             if (container.style.display === 'block') {
@@ -382,7 +209,7 @@
         });
 
         // === FUNGSI SEARCH BERDASARKAN NAMA ===
-        document.getElementById('searchInput').addEventListener('input', function() {
+        document.getElementById('searchInput').addEventListener('input', function () {
             const keyword = this.value.toLowerCase().trim();
             const rows = document.querySelectorAll('#pengajuan-table-body tr');
 
@@ -399,7 +226,7 @@
         });
 
         // === EVENT DELEGATION: KLIK STATUS "PROSES" ===
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             if (e.target.classList.contains('btn-status')) {
                 const button = e.target;
                 const pengajuanId = button.getAttribute('data-id');
